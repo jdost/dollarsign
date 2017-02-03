@@ -3,6 +3,10 @@ import os.path
 
 
 def executables_in(path):
+    ''' executables_in
+    Generates a list of all of the executable files from a walking of the
+    provided path.
+    '''
     if not os.path.exists(path):
         return []
 
