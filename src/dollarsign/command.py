@@ -1,3 +1,6 @@
+import os.path
+
+
 class Command(object):
     ''' command::Command
     Wrapper for construction of a composition chain from a predefined binary
@@ -8,6 +11,13 @@ class Command(object):
         Sets the binary that this object is wrapping
         '''
         self.binary = path
+        self.short_binary = os.path.basename(path)
+
+    def __str__(self):
+        return self.binary
+
+    def __repr__(self):
+        return "<sh: $ {}>".format(self.short_binary)
 
     def __or__(self, other):
         ''' (bitwise or override)

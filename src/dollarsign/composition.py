@@ -100,7 +100,7 @@ class Composer(object):
         stdout for the end process in the chain.
         '''
         self.__run_check__()
-        return self.streams["stdout"]
+        return self.streams.get("stdout", "")
 
     @property
     def stderr(self):
